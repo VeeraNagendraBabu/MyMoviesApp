@@ -9,5 +9,7 @@ namespace MyMoviesApp.API.Repository
     public interface IMoviesRepository
     {
         List<Movie> GetMovies();
+        List<Movie> SearchMoviesBasedOnTitle(String Title);
+        Movie GetMovieBasedOnImdbID(String ImdbID);
     }
 }

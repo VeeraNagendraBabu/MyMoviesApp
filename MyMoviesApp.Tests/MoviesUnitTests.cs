@@ -39,5 +39,13 @@ namespace MyMoviesApp.Tests
             var movie = moviesRepo.GetMovieBasedOnImdbID(input);
             Assert.Null(movie.Title);
         }
+        [Fact]
+        public void SearchMoviesBasedOnImdbID_ValidSearch_ShouldReturnTitle()
+        {
+            var moviesRepo = new MoviesRepository();
+            String input = "tt0373889";
+            var movie = moviesRepo.GetMovieBasedOnImdbID(input);
+            Assert.NotNull(movie.Title);
+        }
     }
 }
