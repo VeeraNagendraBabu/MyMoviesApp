@@ -18,5 +18,4 @@ namespace MyMoviesApp.API.Models
         public string listingType { get; set; }
         public string imdbRating { get; set; }
     }
-
 }
