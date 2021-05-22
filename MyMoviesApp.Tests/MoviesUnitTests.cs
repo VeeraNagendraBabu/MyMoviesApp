@@ -27,7 +27,7 @@ namespace MyMoviesApp.Tests
         public void SearchMoviesBasedOnTitle_InValidSearch_ShouldReturnCountGreaterthanZero()
         {
             var moviesRepo = new MoviesRepository();
-            String input = null;
+            String input = "asdfdfdas";
             var countOfMovies = moviesRepo.SearchMoviesBasedOnTitle(input);
             Assert.True(countOfMovies.Count == 0);
         }

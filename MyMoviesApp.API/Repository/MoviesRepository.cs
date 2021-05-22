@@ -27,11 +27,17 @@ namespace MyMoviesApp.API.Repository
         public List<Movie> SearchMoviesBasedOnTitle(String Title)
         {
             List<Movie> result = new List<Movie>();
-            if (Title != null)
+            if (string.IsNullOrEmpty(Title ))
             {
                 var data = LoadMoviesFromJson();
-                result = data.Where(o => o.Title.Contains(Title)).ToList();
+                result = data.ToList();
             }
+            else
+            {
+                var data = LoadMoviesFromJson();
+                result = data.Where(o => o.Title.ToLower().Contains(Title.ToLower())).ToList();
+            }
+            
             return result;
 
         }
